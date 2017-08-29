@@ -1,0 +1,250 @@
+
+$openSans: 'Open Sans', sans-serif;
+$default: #000000;
+
+@mixin font-family ($family, $size, $color, $lh, $weight) {
+    font-family: $family;
+    font-size: $size;
+    color: $color;
+    line-height: $lh;
+    font-weight: $weight;
+}
+
+html{
+    font-size: 62.5%;
+    color: $default;
+    height: 100%;
+    box-sizing: border-box;
+}
+body{
+    background-color: #FFFFFF;
+    padding-top: 10px;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    white-space: nowrap;
+}
+
+.modal{
+    &-container{
+        max-width: 760px;
+        border: 1px solid black;
+        border-radius: 5px;
+        padding: 13px 20px 30px 20px;
+        margin: 0 auto;
+        background: #efefef;
+        @include font-family($openSans, 1.4rem, #7e7e7e, 1.4rem, 400);
+        display: flex;
+        flex-direction: column;
+    }
+    &__header{
+        @include font-family($openSans, 1.8rem, #7e7e7e, 1.8rem, 600);
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 26px;
+    }
+    &__heading{
+    	&-3{
+        	@include font-family($openSans, 1.4rem, #000000, 1.4rem, 700);
+    		margin-bottom: 10px;
+    		text-transform: uppercase;
+    	}
+    }
+    &__file-chooser{
+		color: #000000;
+		font-weight: 700;
+		display: flex;
+    	justify-content: space-between;
+    	padding-bottom: 22px;
+    }
+
+    &__footer{
+    	display: flex;
+    	justify-content: space-between;
+    }
+    &__button{
+        @include font-family($openSans, 1.4rem, #FFFFFF, 1.4rem, 600);
+    	&--close{
+    		background: #717171;
+			width: 20px;
+			height: 20px;
+    		border: none;
+    		border-radius: 100%;
+    		cursor: pointer;
+			position: relative;
+    		&:before, &:after{
+				content: "";
+				width: 12px;
+				border: 1px solid #ffffff;
+				position: absolute;
+				top: 9px;
+				border-radius: 15px;
+    		}
+    		&:before{
+    			transform: rotate(45deg);
+				right: 4px;
+    		}
+    		&:after{
+    			transform: rotate(-45deg);
+				left: 4px;
+    		}
+    		&:hover, &:focus{
+				background-color: #f61d1d;
+    		}
+		}
+		&--cancel, &--export{
+			width: 66px;
+			height: 28px;
+			border: none;
+			border-radius: 2px;
+			color: #FFFFFF;
+    		cursor: pointer;
+		}
+		&--cancel{
+			background-color: #808080;
+			margin-right: 10px;
+			&:hover, &:focus{
+				background-color: #f61d1d;
+			}
+		}
+		&--export{
+			background-color: #427ab3;
+			&:hover, &:focus{
+				background-color: #39c353;
+			}
+		}
+    }
+}
+
+.file-chooser{
+	&__doc{
+		display: flex;
+    	justify-content: flex-end;
+    	flex-direction: row;
+    	flex-wrap: wrap;
+    	max-width: 176px;
+    	position: relative;
+	}
+	&__select, &__input{
+		width: 175px;
+		height: 30px;
+  		border: 1px solid #c7cbcf;
+  		background: #f7f7f7;
+        @include font-family($openSans, 1.2rem, #3c3c3c, 1.2rem, 600);
+  		padding: 5px;
+  		appearance: none;
+  		&::-ms-expand{
+  			display: none;
+  		}
+	}
+	&__input{
+  		background: #FFFFFF;
+  		width: 420px;
+
+	}
+	&__select{
+		flex-basis: 100%;
+		position: relative;
+    	background: url('http://s24.postimg.org/lyhytocf5/dropdown.png') no-repeat right #f7f7f7;
+	}
+}
+
+.table{
+	width: 100%;
+	font-size: 1.3rem;
+	color: #3d3d3d;
+	&-container{
+		border: 1px solid #979797;
+		margin-bottom: 18px;
+	}
+	&__header{
+		display: flex;
+		background-color: #f5f5f5;
+		height: 30px;
+		align-items: center;
+    	border-bottom: 1px solid #d6d6d6;
+    	text-transform: uppercase;
+    	font-weight: 600;
+    	text-align: left;
+		&-item{
+			font-weight: 700;
+			&:first-of-type{
+				padding-left: 7px;
+			}
+			&--null{
+				width: 2.7%;
+			}
+		}
+	}
+	&__body{
+		height: 330px;
+		overflow-y:auto;
+    	width: 100%;
+   		display:block;
+	}
+}
+
+.document{
+	&__item{
+		height: 50px;
+		background-color: #fbfbfb;
+		display: flex;
+    	align-items: center;
+    	border-bottom: 1px solid #d6d6d6;
+    	&:hover{
+    		background-color: #EEEEEE;
+    		cursor: pointer;
+    	}
+	}
+	&__checkbox{
+		margin: 0;
+		margin-left: 7px;
+	}
+	&__name, &__location{
+		text-align: left;
+	}
+	&__code, &__time{
+		text-align: right;
+		padding-right: 10px;
+	}
+	&__options{
+		display: inherit;
+    	align-items: center;
+	}
+	&__actions{
+		display: inherit;
+	}
+}
+
+.fa-caret-down{
+	font-size: 1.6rem;
+	color: #4d4d4d;
+	margin-left: 5px;
+	cursor: pointer;
+}
+
+@mixin table_item_width($val,$width){
+  .table-item-width-#{$val} {
+    width: #{$width};
+  }  
+}
+
+@mixin make_table_item_width($arrg...) {
+    @each $val in $arrg {
+      @include table_item_width(nth($val,1),nth($val,2));
+    }
+}
+
+@include make_table_item_width(14 14%, 17 17%, 20 20%, 35 35%);

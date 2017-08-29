@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Modal window</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" />
+
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">
+
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+	<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+	<div class="modal-container">
+		<div class="modal__header">
+			<h2>Export Document(s) as PDF:</h2>
+			<button class="modal__button--close"><span class="visuallyhidden">Close modal Window</span></button>
+		</div>
+		<div class="modal__file-chooser">
+			<div class="file-chooser__dossier">
+				<h3 class="modal__heading-3">File dossier</h3>
+				<input type="search" placeholder="SA1465430..." class="file-chooser__input">
+				<span>.PDF</span>
+			</div>
+			<div class="file-chooser__doc">	
+				<h3 class="modal__heading-3">document(s)</h3>
+				<select name="documents" class="file-chooser__select">
+					<option value="selected" disabled selected>Selected Documents</option>
+					<option value="export">export</option>
+					<option value="delete">delete</option>
+				</select>
+			</div>
+		</div>
+		<div class="modal__file-list">
+			<h3 class="modal__heading-3">document to export</h3>
+			<div class="table-container">
+				<table class="table table-fixed">
+					<thead>
+						<tr class="table__header">
+							<th class="table__header-item table-item-width-14">selected <span><i class="fa fa-caret-down" aria-hidden="true"></i></span></th>
+							<th class="table__header-item table-item-width-35">document name <span><i class="fa fa-caret-down" aria-hidden="true"></i></span></th>
+							<th class="table__header-item table-item-width-14">doc code <span><i class="fa fa-caret-down" aria-hidden="true"></i></span></th>
+							<th class="table__header-item table-item-width-17">location <span><i class="fa fa-caret-down" aria-hidden="true"></i></span></th>
+							<th class="table__header-item table-item-width-20">last export date <span><i class="fa fa-caret-down" aria-hidden="true"></i></span></th>
+							<th class="table__header-item--null"></th>
+						</tr>
+					</thead>
+					<tbody class="table__body">
+						<tr class="document__item">
+							<td class="table-item-width-14">
+								<input type="checkbox" class="document__checkbox" checked>
+							</td>
+							<td class="table-item-width-35">Claims</td>
+							<td class="table-item-width-14"></td>
+							<td class="table-item-width-17">Analyse</td>
+							<td class="table-item-width-20 document__time"><time datetime="2016-08-17">2016.08.17</time></td>
+						</tr>
+						<tr class="document__item">
+							<td class="table-item-width-14">
+								<input type="checkbox" class="document__checkbox">
+							</td>
+							<td class="table-item-width-35">Description</td>
+							<td class="table-item-width-14"></td>
+							<td class="table-item-width-17">Analyse</td>
+							<td class="table-item-width-20 document__time"><time datetime="2016-08-17">2016.08.17</time></td>
+						</tr>
+						<tr class="document__item">
+							<td class="table-item-width-14">
+								<input type="checkbox" class="document__checkbox" checked>
+							</td>
+							<td class="table-item-width-35">Drawings</td>
+							<td class="table-item-width-14"></td>
+							<td class="table-item-width-17">Analyse</td>
+							<td class="table-item-width-20 document__time"><time datetime="2016-08-17">2016.08.17</time></td>
+						</tr>
+						<tr class="document__item">
+							<td class="table-item-width-14">
+								<input type="checkbox" class="document__checkbox" checked>
+							</td>
+							<td class="table-item-width-35">DocName</td>
+							<td class="table-item-width-14">A2PAMPHLET</td>
+							<td class="table-item-width-17">Dossier Contents</td>
+							<td class="table-item-width-20 document__time"><time datetime="2016-08-17">2016.08.17</time></td>
+						</tr>
+						<tr class="document__item">
+							<td class="table-item-width-14">
+								<input type="checkbox" class="document__checkbox">
+							</td>
+							<td class="table-item-width-35">DocName 2</td>
+							<td class="table-item-width-14">A2PAMPHLET</td>
+							<td class="table-item-width-17">Dossier Contents</td>
+							<td class="table-item-width-20 document__time"><time datetime="2016-08-17">2016.08.17</time></td>
+						</tr>
+						<tr class="document__item">
+							<td class="table-item-width-14">
+								<input type="checkbox" class="document__checkbox" checked>
+							</td>
+							<td class="table-item-width-35">DocName 3</td>
+							<td class="table-item-width-14">A2PAMPHLET</td>
+							<td class="table-item-width-17">Dossier Contents</td>
+							<td class="table-item-width-20 document__time"><time datetime="2016-08-17">2016.08.17</time></td>
+						</tr>
+						<tr class="document__item">
+							<td class="table-item-width-14">
+								<input type="checkbox" class="document__checkbox">
+							</td>
+							<td class="table-item-width-35">Another Name 4</td>
+							<td class="table-item-width-14">A2PAMPHLET</td>
+							<td class="table-item-width-17">Dossier Contents</td>
+							<td class="table-item-width-20 document__time"><time datetime="2016-08-17">2016.08.17</time></td>
+						</tr>
+						<tr class="document__item">
+							<td class="table-item-width-14">
+								<input type="checkbox" class="document__checkbox">
+							</td>
+							<td class="table-item-width-35">DocName</td>
+							<td class="table-item-width-14">A2PAMPHLET</td>
+							<td class="table-item-width-17">Dossier Contents</td>
+							<td class="table-item-width-20 document__time"><time datetime="2016-08-17">2016.08.17</time></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div class="modal__footer">
+			<div class="document__options">
+				<input type="checkbox" checked>
+				<label for="" class="modal__option">Export with annotations (Analyse Only)</label>
+				<input type="checkbox" checked>
+				<label for="" class="modal__option">Export with Dossier Metadata</label>
+			</div>
+			<div class="document__actions">
+				<button class="modal__button modal__button--cancel">Cancel</button>
+				<button class="modal__button modal__button--export">Export</button>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>
