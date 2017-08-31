@@ -1,5 +1,11 @@
-### Live demo  
+### Requirements  
 
+FLEXBOX, SASS, BEM.
+Firefox, Chrome, Edge support.
+
+---------------
+
+### Live demo  
 
 Temporary [LIVE DEMO] (https://artur-hibner.github.io/Junior-Frontend-Recruitment-Tasks/Modal-window/dest/dev/)
 
